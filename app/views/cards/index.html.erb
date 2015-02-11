@@ -1,0 +1,23 @@
+<div class="reveal">
+  <div class="slides">
+    <% @topics.each do |topic| %>
+      <section>
+        <h1>Topic</h1>
+        <hr>
+        <h2><%= topic.title %></h2>
+      </section>
+      <% topic.keyword_list.each do |keyword| %>
+              <section id="<%= keyword %>"><h1><%= keyword %></h1></section>
+      <% end %>
+      <% topic.question_list.each do |question| %>
+              <section><h1><%= question %></h1></section>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>
+  <script>
+    // Required, even if empty.
+    Reveal.initialize({
+    });
+  </script>
