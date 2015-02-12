@@ -1,4 +1,11 @@
 ConversationGame::Application.routes.draw do
+  resources :topics do
+    collection do
+      get 'cards'
+    end
+  end
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
