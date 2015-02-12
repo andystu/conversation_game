@@ -1,5 +1,5 @@
 ConversationGame::Application.routes.draw do
-  get "cards/index"
+  root "cards#index"
   resources :topics
 
   # The priority is based upon order of creation: first created -> highest priority.
