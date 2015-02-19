@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @conversation.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @conversation.description %>
+</p>
+
+<p>
+  <strong>Custom path:</strong>
+  <%= @conversation.custom_path %>
+</p>
+
+<%= link_to 'Edit', edit_conversation_path(@conversation) %> |
+<%= link_to 'Back', conversations_path %> |
+<%= link_to 'New Card', "#{conversation_path(@conversation)}/cards/new" %>

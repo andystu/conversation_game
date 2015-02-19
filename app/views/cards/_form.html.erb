@@ -1,0 +1,22 @@
+<%= form_for([@conversation, @card]) do |f| %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% @card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+  <%= hidden_field_tag('card[conversation_id]', params[:conversation_id]) %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
