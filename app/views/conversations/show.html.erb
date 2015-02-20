@@ -15,6 +15,14 @@
   <%= @conversation.custom_path %>
 </p>
 
+<% for card in @conversation.cards %>
+  <p>
+    <strong> card: </strong>
+    <%= card.content %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_conversation_path(@conversation) %> |
 <%= link_to 'Back', conversations_path %> |
-<%= link_to 'New Card', "#{conversation_path(@conversation)}/cards/new" %>
+<%= link_to 'New Card', "#{conversation_path(@conversation)}/cards/new" %> |
+<%= link_to 'View Game', "/play/#{@conversation.id}" %>
