@@ -1,4 +1,5 @@
 ConversationGame::Application.routes.draw do
+  get "play/:id" => "play#play"
   # resources :cards
 
   resources :conversations do

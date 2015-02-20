@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyString
+  id: 1
+  title: Conversation1
+  description: LetsHaveATalk
   custom_path: MyString
 
 two:
-  title: MyString
-  description: MyString
+  id: 2
+  title: Conversation2
+  description: LetsTalkSomeMore
   custom_path: MyString
