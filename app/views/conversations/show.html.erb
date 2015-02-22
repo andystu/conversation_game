@@ -15,7 +15,7 @@
   <%= @conversation.custom_path %>
 </p>
 
-<% for card in @conversation.cards %>
+<% for card in @conversation.ordered_cards %>
   <p>
     <strong> card: </strong>
     <%= card.content %>
