@@ -3,12 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.13'
 
-gem 'rails_12factor', group: :production
-gem 'pg', group: :production
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: :development
-gem 'sqlite3', group: :test
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -47,3 +43,18 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+#
+group :development do
+  gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'sqlite3'
+end
+
+group :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
