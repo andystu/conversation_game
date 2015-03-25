@@ -19,14 +19,15 @@
 <table class="table">
 <thead>
   <tr>
-    <td></td>
     <td>Content</td>
+    <td> Re-Order </td>
   </tr>
 </thead>
 <% for card in @conversation.ordered_cards %>
   <tr>
-    <td><strong> card: </strong></td>
-    <td><%= card.content %></td>
+    <td>
+      <%=link_to card.content, edit_conversation_card_path(@conversation, card) %>
+    </td>
     <td>
       <span data-card-id="<%=card.id%>"
             data-conversation-id="<%=@conversation.id%>"
@@ -39,23 +40,21 @@
 <% end %>
 <tr>
   <td>
-  </td>
-  <td>
     <a href='<%="#{conversation_path(@conversation)}/cards/new" %>'
       type="button" class="btn btn-default">
       <span class="glyphicon glyphicon-plus"></span>
+    </a>
+  </td>
+  <td>
+    <a href='<%="/play/#{@conversation.id}" %>'
+      class="btn btn-default">
+      Play!
     </a>
   </td>
 </tr>
 
 </table>
 
-<div>
-  <a href='<%="/play/#{@conversation.id}" %>'
-    class="btn btn-default">
-    Play!
-  </a>
-</div>
 
 <%= link_to 'Edit', edit_conversation_path(@conversation) %> |
 <%= link_to 'Back', conversations_path %> |

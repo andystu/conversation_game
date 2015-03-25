@@ -52,7 +52,7 @@ class CardsController < ApplicationController
     @conversation = Conversation.find(params[:conversation_id])
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to [@conversation, @card], notice: 'Card was successfully updated.' }
+        # format.html { redirect_to [@conversation, @card], notice: 'Card was successfully updated.' }
         format.html { redirect_to @conversation, notice: 'Card was successfully updated.' }
         format.json { head :no_content }
       else
