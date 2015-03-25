@@ -27,6 +27,14 @@
   <tr>
     <td><strong> card: </strong></td>
     <td><%= card.content %></td>
+    <td>
+      <span data-card-id="<%=card.id%>"
+            data-conversation-id="<%=@conversation.id%>"
+            class="up-card glyphicon glyphicon-arrow-up"></span>
+      <span data-card-id="<%=card.id%>"
+            data-conversation-id="<%=@conversation.id%>"
+            class="down-card glyphicon glyphicon-arrow-down"></span>
+    </td>
   </tr>
 <% end %>
 <tr>

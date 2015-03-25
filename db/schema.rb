@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218023913) do
+ActiveRecord::Schema.define(version: 20150325133033) do
 
   create_table "cards", force: true do |t|
     t.string   "content"
     t.integer  "conversation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "card_order"
   end
 
   add_index "cards", ["conversation_id"], name: "index_cards_on_conversation_id"

@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
+
   # GET /cards
   # GET /cards.json
   def index
@@ -52,6 +53,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @card.update(card_params)
         format.html { redirect_to [@conversation, @card], notice: 'Card was successfully updated.' }
+        format.html { redirect_to @conversation, notice: 'Card was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -78,6 +80,6 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:content, :conversation_id)
+      params.require(:card).permit(:content, :conversation_id, :card_order_position)
     end
 end
