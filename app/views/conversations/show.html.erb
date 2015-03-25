@@ -17,13 +17,13 @@
 
 <strong>Cards:</strong>
 <table class="table">
+<thead>
+  <tr>
+    <td></td>
+    <td>Content</td>
+  </tr>
+</thead>
 <% for card in @conversation.ordered_cards %>
-  <thead>
-    <tr>
-      <td></td>
-      <td>Content</td>
-    </tr>
-  </thead>
   <tr>
     <td><strong> card: </strong></td>
     <td><%= card.content %></td>
